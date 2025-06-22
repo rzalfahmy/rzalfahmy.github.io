@@ -1029,37 +1029,18 @@ shortcut={all_shortcuts:{},add:function(a,b,c){var d={type:"keydown",propagate:!
 //]]>
 </script>
 
-			      <script>
-  $(document).ready(function () {
-    let filterTriggered = false;
+<script>
+  $(window).on('scroll', function () {
+    var sectionTop = $('#section-works').offset().top;
+    var scrollTop = $(window).scrollTop();
+    var windowHeight = $(window).height();
 
-    $(window).on('scroll', function () {
-      if (filterTriggered) return;
-
-      const sectionTop = $('#section-works').offset().top;
-      const scrollTop = $(window).scrollTop();
-      const windowHeight = $(window).height();
-
-      if (scrollTop + windowHeight > sectionTop + 100) {
-        const $allButton = $('#filter li a[data-filter="*"]');
-
-        if (!$allButton.hasClass('current')) {
-          $allButton.trigger('click'); // pastikan klik jalan
-          $('#filter li a').removeClass('current');
-          $allButton.addClass('current');
-        }
-
-        filterTriggered = true;
-      }
-    });
-
-    $('#filter li a').on('click', function () {
-      $('#filter li a').removeClass('current');
-      $(this).addClass('current');
-    });
+    if (scrollTop + windowHeight > sectionTop + 100) {
+      $('#filter li a[data-filter="*"]').trigger('click');
+      $(window).off('scroll'); // Hanya jalankan sekali
+    }
   });
 </script>
-
 			      
 </body>
 
