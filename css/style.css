@@ -1063,7 +1063,7 @@ Media queries
 @media only screen and (min-device-width : 979px) and (max-device-width : 1024px)  {
 
 	.navbar-nav {
-		margin-top: 20px;
+		margin-top: 0px;
 	}
 }
 
@@ -1071,7 +1071,7 @@ Media queries
 @media only screen and (min-width: 768px) and (max-width: 959px) {
 
 	.navbar-nav {
-		margin-top: 20px;
+		margin-top: 0px;
 	}
 }
 @media (max-width: 767px) {
