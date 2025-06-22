@@ -1029,18 +1029,7 @@ shortcut={all_shortcuts:{},add:function(a,b,c){var d={type:"keydown",propagate:!
 //]]>
 </script>
 			      
-<script>
-  $(window).on('scroll', function () {
-    var sectionTop = $('#section-works').offset().top;
-    var scrollTop = $(window).scrollTop();
-    var windowHeight = $(window).height();
 
-    if (scrollTop + windowHeight > sectionTop + 100) {
-      $('#filter li a[data-filter="*"]').trigger('click');
-      $(window).off('scroll'); // Hanya jalankan sekali
-    }
-  });
-</script>
 
 </body>
 
