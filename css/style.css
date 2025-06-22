@@ -1093,6 +1093,11 @@ Media queries
 	section.featured {
 		padding-top: 180px;
 	}
+
+	section.section {
+	margin:0;
+	padding: 90px 0 60px 0;
+	}
 	
 	.team-member,.col-lg-4 {
 		margin-bottom: 30px;
