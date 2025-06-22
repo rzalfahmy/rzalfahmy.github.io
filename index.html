@@ -1029,28 +1029,18 @@ shortcut={all_shortcuts:{},add:function(a,b,c){var d={type:"keydown",propagate:!
 //]]>
 </script>
 
-			      <script>
-  $(function () {
-    // Trigger otomatis ketika section terlihat
-    $(window).on('scroll', function () {
-      var sectionTop = $('#section-works').offset().top;
-      var scrollTop = $(window).scrollTop();
-      var windowHeight = $(window).height();
+<script>
+  $(window).on('scroll', function () {
+    var sectionTop = $('#section-works').offset().top;
+    var scrollTop = $(window).scrollTop();
+    var windowHeight = $(window).height();
 
-      if (scrollTop + windowHeight > sectionTop + 100) {
-        $('#filter li a[data-filter="*"]').trigger('click');
-        $(window).off('scroll');
-      }
-    });
-
-    // Set tombol filter agar current class-nya selalu tepat
-    $('#filter li a').on('click', function () {
-      $('#filter li a').removeClass('current'); // hapus dari semua
-      $(this).addClass('current');              // tambahkan ke yang diklik
-    });
+    if (scrollTop + windowHeight > sectionTop + 100) {
+      $('#filter li a[data-filter="*"]').trigger('click');
+      $(window).off('scroll'); // Hanya jalankan sekali
+    }
   });
 </script>
-
 
 
 </body>
