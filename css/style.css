@@ -1083,12 +1083,15 @@ Media queries
 		background-color: #444;
 		width: 100%;
 		float: none;
-		margin:100;
+		margin:0;
 		padding:0;
 	}
 	.navbar .navbar-collapse ul.nav li {
 		border-bottom: 1px solid #666;
 	}
+	.navbar-collapse.in {
+	margin-top: -5px !important;
+}
 	section.featured {
 		padding-top: 180px;
 	}
