@@ -644,7 +644,7 @@ nav#filter a:hover, nav#filter a.current {
 	margin-bottom:1.45em;/*set next row on the baseline*/
 }
 nav#filter {
-	margin-bottom:0.5em;
+	margin-bottom:1.5em;
 }
 
 nav#filter li {
