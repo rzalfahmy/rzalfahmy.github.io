@@ -1029,6 +1029,40 @@ shortcut={all_shortcuts:{},add:function(a,b,c){var d={type:"keydown",propagate:!
 //]]>
 </script>
 
+<script>
+  $(document).ready(function () {
+    let filterTriggered = false; // agar tidak jalan berulang
+
+    $(window).on('scroll', function () {
+      if (filterTriggered) return;
+
+      const sectionTop = $('#section-works').offset().top;
+      const scrollTop = $(window).scrollTop();
+      const windowHeight = $(window).height();
+
+      if (scrollTop + windowHeight > sectionTop + 100) {
+        // Klik tombol "All" hanya jika belum diaktifkan
+        const $allButton = $('#filter li a[data-filter="*"]');
+
+        // Trigger klik hanya jika belum aktif
+        if (!$allButton.hasClass('current')) {
+          $('#filter li a').removeClass('current');
+          $allButton.addClass('current').trigger('click');
+        }
+
+        filterTriggered = true; // flag agar tidak trigger lagi
+      }
+    });
+
+    // Amankan logika class "current" saat tombol filter diklik manual
+    $('#filter li a').on('click', function () {
+      $('#filter li a').removeClass('current');
+      $(this).addClass('current');
+    });
+  });
+</script>
+
+			      
 </body>
 
 </html>
