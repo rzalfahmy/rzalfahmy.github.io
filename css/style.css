@@ -427,6 +427,15 @@ h1 a.navbar-brand {
 	margin-top: -5px !important;
 }
 
+/* ✅ Tambahan agar tombol navbar tidak berubah warna saat aktif / diklik */
+.navbar .navbar-nav > .active > a,
+.navbar .navbar-nav > .active > a:focus,
+.navbar .navbar-nav > .active > a:hover {
+	background: none !important;
+	color: #fff !important;
+	box-shadow: none !important;
+}
+
 
 
 /*===========================
