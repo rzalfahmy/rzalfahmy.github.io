@@ -1030,17 +1030,39 @@ shortcut={all_shortcuts:{},add:function(a,b,c){var d={type:"keydown",propagate:!
 </script>
 
 <script>
-  $(window).on('scroll', function () {
-    var sectionTop = $('#section-works').offset().top;
-    var scrollTop = $(window).scrollTop();
-    var windowHeight = $(window).height();
+  $(document).ready(function () {
+    let filterTriggeredByScroll = false;
 
-    if (scrollTop + windowHeight > sectionTop + 100) {
-      $('#filter li a[data-filter="*"]').trigger('click');
-      $(window).off('scroll'); // Hanya jalankan sekali
-    }
+    // Jalankan satu kali saat scroll menyentuh section
+    $(window).on('scroll', function () {
+      if (filterTriggeredByScroll) return;
+
+      var sectionTop = $('#section-works').offset().top;
+      var scrollTop = $(window).scrollTop();
+      var windowHeight = $(window).height();
+
+      if (scrollTop + windowHeight > sectionTop + 100) {
+        // Simulasikan klik tombol "All"
+        $('#filter li a').removeClass('current');
+        $('#filter li a[data-filter="*"]').addClass('current').trigger('click');
+
+        filterTriggeredByScroll = true;
+      }
+    });
+
+    // Deteksi klik manual pada semua tombol filter
+    $('#filter li a').on('click', function () {
+      $('#filter li a').removeClass('current');
+      $(this).addClass('current');
+
+      // Jika user klik selain "All", anggap scroll-trigger selesai
+      if ($(this).data('filter') !== '*') {
+        filterTriggeredByScroll = true;
+      }
+    });
   });
 </script>
+
 			      
 </body>
 
