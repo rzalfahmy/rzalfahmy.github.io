@@ -395,10 +395,6 @@ section.section {
 	margin-bottom: 0;
 	padding-bottom:0;	
 }
-
-.navbar .navbar-nav > .active > a {
-	color: #fff;
-}
 .navbar .navbar-nav > .active > a {
 	padding-bottom: 22px;
 }
