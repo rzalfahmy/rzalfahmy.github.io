@@ -1029,9 +1029,9 @@ shortcut={all_shortcuts:{},add:function(a,b,c){var d={type:"keydown",propagate:!
 //]]>
 </script>
 
-<script>
+			      <script>
   $(document).ready(function () {
-    let filterTriggered = false; // agar tidak jalan berulang
+    let filterTriggered = false;
 
     $(window).on('scroll', function () {
       if (filterTriggered) return;
@@ -1041,20 +1041,18 @@ shortcut={all_shortcuts:{},add:function(a,b,c){var d={type:"keydown",propagate:!
       const windowHeight = $(window).height();
 
       if (scrollTop + windowHeight > sectionTop + 100) {
-        // Klik tombol "All" hanya jika belum diaktifkan
         const $allButton = $('#filter li a[data-filter="*"]');
 
-        // Trigger klik hanya jika belum aktif
         if (!$allButton.hasClass('current')) {
+          $allButton.trigger('click'); // pastikan klik jalan
           $('#filter li a').removeClass('current');
-          $allButton.addClass('current').trigger('click');
+          $allButton.addClass('current');
         }
 
-        filterTriggered = true; // flag agar tidak trigger lagi
+        filterTriggered = true;
       }
     });
 
-    // Amankan logika class "current" saat tombol filter diklik manual
     $('#filter li a').on('click', function () {
       $('#filter li a').removeClass('current');
       $(this).addClass('current');
