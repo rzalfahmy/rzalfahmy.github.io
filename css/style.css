@@ -1087,7 +1087,7 @@ Media queries
 		padding:0;
 	}
 	.navbar .navbar-collapse ul.nav li {
-		border-bottom: 1px solid #666;
+		border-bottom: 10px solid #666;
 	}
 	section.featured {
 		padding-top: 180px;
