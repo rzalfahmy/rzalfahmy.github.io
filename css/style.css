@@ -1089,9 +1089,7 @@ Media queries
 	.navbar .navbar-collapse ul.nav li {
 		border-bottom: 1px solid #666;
 	}
-	.navbar-collapse.in {
-	margin-top: -5px !important;
-}
+	
 	section.featured {
 		padding-top: 180px;
 	}
