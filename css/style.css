@@ -644,12 +644,12 @@ nav#filter a:hover, nav#filter a.current {
 	margin-bottom:1.45em;/*set next row on the baseline*/
 }
 nav#filter {
-	margin-bottom:10.5em;
+	margin-bottom:1.5em;
 }
 
 nav#filter li {
 	display:inline-block;
-	margin:0 0 0 5px;
+	margin:5px;
 }
 nav#filter a {
 	padding: 4px 12px;
